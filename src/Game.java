@@ -157,6 +157,27 @@ public class Game {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	
+	System.out.println();
+	for (int i=0;i<map.getSizeY();i++){
+		for (int j=0;j<map.getSizeX();j++){
+			if (map.map[i][j] instanceof Ground)
+				System.out.print("G  ");
+			else if (map.map[i][j] instanceof Wall)
+				System.out.print("W  ");
+			else if (map.map[i][j] instanceof SpecialWall)
+				System.out.print("S  ");
+			else if (map.map[i][j] instanceof Pit)
+				System.out.print("P  ");
+			else if (map.map[i][j] instanceof SpaceShip)
+				System.out.print("SS ");
+			else if (map.map[i][j] instanceof Door)
+				System.out.print("D  ");
+			else if (map.map[i][j] instanceof Scale)
+				System.out.print("SC ");				
+		}
+		System.out.println();
+	}
 		
 	}
 }

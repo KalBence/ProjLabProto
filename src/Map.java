@@ -155,33 +155,34 @@ public class Map {
 
 		    while (line != null) {
 		    	Y++;
-		    	sizeY = Y;
+		    	sizeY = Y +1 ;
 		      String[]c=line.split(";");
-		      sizeX= c.length;
+		      sizeX= c.length+1;
 		     for(int i=0;i<c.length;i++){
 		    	if (c[i].equals("W")){
-		    		map[i][Y]=new Wall(new Coord(Y,i));
+		    		map[Y][i]=new Wall(new Coord(i,Y));
 		    	}
 		    	else if (c[i].equals("G")){
-		    		map[i][Y]=new Ground(new Coord(Y,i));
+		    		map[Y][i]=new Ground(new Coord(i,Y));
 		    	}
 		    	else if (c[i].equals("S")){
-		    		map[i][Y]=new SpecialWall(new Coord(Y,i));
+		    		map[Y][i]=new SpecialWall(new Coord(i,Y));
 		    	}
 		    	else if (c[i].equals("P")){
-		    		map[i][Y]=new Pit(oneil,new Coord(Y,i));
+		    		map[Y][i]=new Pit(oneil,new Coord(i,Y));
 		    	}
 		    	else if (c[i].equals("D")){
 		    	}
 		    	else if (c[i].equals("SS")){
-		    		map[i][Y]=new SpaceShip(new Coord(Y,i));
+		    		map[Y][i]=new SpaceShip(new Coord(i,Y));
 		    	}
 		    	else if (c[i].contains("SC")){
 		    		int Dx,Dy;
 		    		Dx=Character.getNumericValue(c[i].charAt(2));
 		    		Dy=Character.getNumericValue(c[i].charAt(3));
+		    		System.out.println(Dx+" : "+Dy);
 		    		map[Dx][Dy]=new Door(new Coord(Dx,Dy));
-		    		map[i][Y]=new Scale(new Coord(Dy,Dx),new Coord(i,Y),this);
+		    		map[Y][i]=new Scale(new Coord(Dy,Dx),new Coord(i,Y),this);
 		    	}
 		     }
 		        line = br.readLine();
