@@ -179,9 +179,8 @@ public class Map {
 		    		int Dx,Dy;
 		    		Dx=Character.getNumericValue(c[i].charAt(2));
 		    		Dy=Character.getNumericValue(c[i].charAt(3));
-		    		//System.out.println(cx);
 		    		map[Dx][Dy]=new Door(new Coord(Dx,Dy));
-		    		map[i][Y]=new Scale(new Coord(Dx,Dy),new Coord(Y,i),this);
+		    		map[i][Y]=new Scale(new Coord(Dy,Dx),new Coord(i,Y),this);
 		    	}
 		     }
 		        line = br.readLine();

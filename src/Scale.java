@@ -47,6 +47,7 @@ public class Scale extends Tile {
 
 	@Override
 	public Coord stepOn(Coord c) {
+		System.out.println("lool");
 		map.map[door.getX()][door.getY()].openDoor();
 		System.out.println("Bumm ajtó");
 		return location;
