@@ -10,7 +10,7 @@ public class Map {
 	private int sizeX;
 	private int sizeY;
 	private int ZPMcount;
-	public Tile[][] map = new Tile[13][19];
+	public Tile[][] map = new Tile[11][11];
 	
 	public int getSizeX() {
 		return sizeX;		
@@ -23,7 +23,7 @@ public class Map {
 	public Map() {
 		
 	}
-	
+/*	
 	//pálya felépítése
 	//a végleges verzióba itt egy fájlból lesz kiolvasva a mátrix 
 	//és ebbõl építi fel a pályát az itt látotthoz hasonló módon
@@ -141,13 +141,14 @@ public class Map {
         map[1][2] = new Ground(c1); 
         map[1][3] = new Wall(c2); 
 	}
+	*/
 	public void initmap() throws IOException{
 		int Y=0;
 		String current = new java.io.File( "." ).getCanonicalPath();
         System.out.println("Current dir:"+current);
  String currentDir = System.getProperty("user.dir");
         System.out.println("Current dir using System:" +currentDir);
-		BufferedReader br = new BufferedReader(new FileReader("Map.csv"));
+		BufferedReader br = new BufferedReader(new FileReader("Map2.csv"));
 		try {
 		    StringBuilder sb = new StringBuilder();
 		    String line = br.readLine();
@@ -169,7 +170,19 @@ public class Map {
 		    	else if (c[i].equals("P")){
 		    		map[i][Y]=new Pit(oneil,new Coord(Y,i));
 		    	}
-		    	
+		    	else if (c[i].equals("D")){
+		    	}
+		    	else if (c[i].equals("SS")){
+		    		map[i][Y]=new SpaceShip(new Coord(Y,i));
+		    	}
+		    	else if (c[i].contains("SC")){
+		    		int Dx,Dy;
+		    		Dx=Character.getNumericValue(c[i].charAt(2));
+		    		Dy=Character.getNumericValue(c[i].charAt(3));
+		    		//System.out.println(cx);
+		    		map[Dx][Dy]=new Door(new Coord(Dx,Dy));
+		    		map[i][Y]=new Scale(new Coord(Dx,Dy),new Coord(Y,i),this);
+		    	}
 		     }
 		        line = br.readLine();
 		        System.out.println(c[0]);

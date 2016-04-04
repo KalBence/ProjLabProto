@@ -144,8 +144,14 @@ public class Game {
 			System.out.println(e.getMessage());
 		}
 		*/
+		
 	try {
 		map.initmap();
+		o = new ONeil(map,3);
+		for(int i=0;i<18;i++){
+		o.move();}
+		
+		
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
