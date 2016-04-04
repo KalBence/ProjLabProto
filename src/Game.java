@@ -9,7 +9,7 @@ public class Game {
 		ONeil o = null;
 		
 		System.out.println("Tesztelni kivánt elem sorszáma:");
-		try {
+		/*try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
 			while((n=br.readLine())!=null) {
 				switch(Integer.parseInt(n)) {
@@ -143,8 +143,13 @@ public class Game {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		
-	
+		*/
+	try {
+		map.initmap();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 		
 	}
 }

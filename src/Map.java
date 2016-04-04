@@ -1,4 +1,8 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 //A pálya osztálya
 public class Map {
@@ -6,7 +10,7 @@ public class Map {
 	private int sizeX;
 	private int sizeY;
 	private int ZPMcount;
-	public Tile[][] map = new Tile[4][4];
+	public Tile[][] map = new Tile[13][19];
 	
 	public int getSizeX() {
 		return sizeX;		
@@ -37,8 +41,8 @@ public class Map {
         		}
         	}
        }
-       sizeX=4;		//fájlba lévõ mátrix méretétõl függ majd, most fix 4
-       sizeY=4;		//fájlba lévõ mátrix méretétõl függ majd, most fix 4
+       sizeX=18;		//fájlba lévõ mátrix méretétõl függ majd, most fix 4
+       sizeY=13;		//fájlba lévõ mátrix méretétõl függ majd, most fix 4
        ZPMcount=7;	
 	}
 	public void init3() {
@@ -137,5 +141,42 @@ public class Map {
         map[1][2] = new Ground(c1); 
         map[1][3] = new Wall(c2); 
 	}
-	
+	public void initmap() throws IOException{
+		int Y=0;
+		String current = new java.io.File( "." ).getCanonicalPath();
+        System.out.println("Current dir:"+current);
+ String currentDir = System.getProperty("user.dir");
+        System.out.println("Current dir using System:" +currentDir);
+		BufferedReader br = new BufferedReader(new FileReader("Map.csv"));
+		try {
+		    StringBuilder sb = new StringBuilder();
+		    String line = br.readLine();
+
+		    while (line != null) {
+		    	Y++;
+		    	
+		      String[]c=line.split(";");
+		     for(int i=0;i<c.length;i++){
+		    	if (c[i].equals("W")){
+		    		map[i][Y]=new Wall(new Coord(Y,i));
+		    	}
+		    	else if (c[i].equals("G")){
+		    		map[i][Y]=new Ground(new Coord(Y,i));
+		    	}
+		    	else if (c[i].equals("S")){
+		    		map[i][Y]=new SpecialWall(new Coord(Y,i));
+		    	}
+		    	else if (c[i].equals("P")){
+		    		map[i][Y]=new Pit(oneil,new Coord(Y,i));
+		    	}
+		    	
+		     }
+		        line = br.readLine();
+		        System.out.println(c[0]);
+		    }
+		    String everything = sb.toString();
+		} finally {
+		    br.close();
+		}
+	}
 }
