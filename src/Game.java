@@ -8,7 +8,7 @@ public class Game {
 		Map map = new Map();
 		ONeil o = null;
 		
-		System.out.println("Tesztelni kivánt elem sorszáma:");
+		//System.out.println("Tesztelni kivánt elem sorszáma:");
 		/*try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
 			while((n=br.readLine())!=null) {
@@ -148,8 +148,9 @@ public class Game {
 	try {
 		map.initmap();
 		o = new ONeil(map,3);
-		for(int i=0;i<18;i++){
-		o.move();}
+		/*for(int i=0;i<18;i++){
+		o.move();
+		}*/
 		
 		
 	} catch (IOException e) {

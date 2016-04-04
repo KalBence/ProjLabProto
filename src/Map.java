@@ -145,9 +145,9 @@ public class Map {
 	public void initmap() throws IOException{
 		int Y=0;
 		String current = new java.io.File( "." ).getCanonicalPath();
-        System.out.println("Current dir:"+current);
- String currentDir = System.getProperty("user.dir");
-        System.out.println("Current dir using System:" +currentDir);
+       // System.out.println("Current dir:"+current);
+		String currentDir = System.getProperty("user.dir");
+       // System.out.println("Current dir using System:" +currentDir);
 		BufferedReader br = new BufferedReader(new FileReader("Map2.csv"));
 		try {
 		    StringBuilder sb = new StringBuilder();
@@ -155,8 +155,9 @@ public class Map {
 
 		    while (line != null) {
 		    	Y++;
-		    	
+		    	sizeY = Y;
 		      String[]c=line.split(";");
+		      sizeX= c.length;
 		     for(int i=0;i<c.length;i++){
 		    	if (c[i].equals("W")){
 		    		map[i][Y]=new Wall(new Coord(Y,i));
