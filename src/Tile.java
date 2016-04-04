@@ -26,7 +26,7 @@ public abstract class Tile {
 	public Tile(Coord c) {
 		object = null;
 		location = c;
-		System.out.println("Tile: konstruktor metódus hívás");
+		//System.out.println("Tile: konstruktor metódus hívás");
 	}
 	
 	

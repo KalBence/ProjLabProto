@@ -181,8 +181,9 @@ public class Map {
 		    		Dx=Character.getNumericValue(c[i].charAt(2));
 		    		Dy=Character.getNumericValue(c[i].charAt(3));
 		    		System.out.println(Dx+" : "+Dy);
-		    		map[Dx][Dy]=new Door(new Coord(Dx,Dy));
+		    		
 		    		map[Y][i]=new Scale(new Coord(Dy,Dx),new Coord(i,Y),this);
+		    		map[Dx][Dy]=new Door(new Coord(Dy,Dx));
 		    	}
 		     }
 		        line = br.readLine();
