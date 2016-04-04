@@ -1,4 +1,3 @@
-import com.sun.javafx.scene.traversal.Direction;
 
 //Abstract osztály: a lövedék kezelésére
 public abstract class Bullet {
