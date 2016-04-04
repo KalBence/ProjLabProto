@@ -1,5 +1,7 @@
 import java.awt.Image;
 
+//ingyom bingyom répakrém más is homo nem csak én
+
 //Osztály a kék lövedék kezelésére
 public class BlueBullet extends Bullet {
 	private Image image;
