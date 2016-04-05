@@ -8,11 +8,11 @@ public class Game {
 		Map map = new Map();
 		ONeil o = null;
 		
-		//System.out.println("Tesztelni kivánt elem sorszáma:");
-		/*try {
+		/*System.out.println("Tesztelni kivánt elem sorszáma:");
+		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
 			while((n=br.readLine())!=null) {
-				switch(Integer.parseInt(n)) {
+				/*switch(Integer.parseInt(n)) {
 				case 0:
 					System.out.println("--- Initialization ---");
 					int[][] test = new int[][]{
