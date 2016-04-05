@@ -164,6 +164,7 @@ public class Map {
 		    	}
 		    	else if (c[i].equals("G")){
 		    		map[Y][i]=new Ground(new Coord(i,Y));
+		    		//map[Y][i]=new Door(new Coord(i,Y));
 		    	}
 		    	else if (c[i].equals("S")){
 		    		map[Y][i]=new SpecialWall(new Coord(i,Y));
@@ -178,12 +179,12 @@ public class Map {
 		    	}
 		    	else if (c[i].contains("SC")){
 		    		int Dx,Dy;
-		    		Dx=Character.getNumericValue(c[i].charAt(2));
-		    		Dy=Character.getNumericValue(c[i].charAt(3));
+		    		Dx=Character.getNumericValue(c[i].charAt(2)); //6
+		    		Dy=Character.getNumericValue(c[i].charAt(3)); //10
 		    		System.out.println(Dx+" : "+Dy);
 		    		
 		    		map[Y][i]=new Scale(new Coord(Dy,Dx),new Coord(i,Y),this);
-		    		map[Dx][Dy]=new Door(new Coord(Dy,Dx));
+		    		 map[6][10]=new Door(new Coord(10,6));  
 		    	}
 		     }
 		        line = br.readLine();
@@ -192,6 +193,9 @@ public class Map {
 		    String everything = sb.toString();
 		} finally {
 		    br.close();
+		   
+
 		}
+		
 	}
 }

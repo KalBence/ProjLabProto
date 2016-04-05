@@ -18,14 +18,14 @@ public class ONeil {
 		  Right
 		}
 	 
-	 Directions direction = Directions.Right;
+	 Directions direction = Directions.Down;
 	 
 	 //Konstruktor
 	public ONeil(Map map,int lives) {
 		System.out.println("ONeil: konstruktor metódus hívás");
 		this.map=map;
 		this.lives=lives;
-		loc = new Coord(1,7); //(oszlop,sor)
+		loc = new Coord(8,7); //(oszlop,sor)
 	}
 	
 	//Mozgását kezelõ metódus

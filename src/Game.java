@@ -148,9 +148,9 @@ public class Game {
 	try {
 		map.initmap();
 		o = new ONeil(map,3);
-		/*for(int i=0;i<18;i++){
+		for(int i=0;i<18;i++){
 		o.move();
-		}*/
+		}
 		
 		
 	} catch (IOException e) {
@@ -171,13 +171,16 @@ public class Game {
 				System.out.print("P  ");
 			else if (map.map[i][j] instanceof SpaceShip)
 				System.out.print("SS ");
-			else if (map.map[i][j] instanceof Door)
-				System.out.print("D  ");
+			else if (map.map[i][j] instanceof Door){
+				System.out.print("D ");
+				
+			}
+				
 			else if (map.map[i][j] instanceof Scale)
 				System.out.print("SC ");				
 		}
 		System.out.println();
 	}
-		
+
 	}
 }
