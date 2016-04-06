@@ -16,9 +16,10 @@ public class ONeil {
 		  Down, 
 		  Left, 
 		  Right
+		  
 		}
 	 
-	 Directions direction = Directions.Down;
+	 Directions direction = Directions.Up;
 	 
 	 //Konstruktor
 	public ONeil(Map map,int lives) {
