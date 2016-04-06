@@ -198,4 +198,31 @@ public class Map {
 		}
 		
 	}
+	public void getMap(){
+		System.out.println();
+		for (int i=0;i<getSizeY();i++){
+			for (int j=0;j<getSizeX();j++){
+				if (map[i][j] instanceof Ground)
+					System.out.print("G  ");
+				else if (map[i][j] instanceof Wall)
+					System.out.print("W  ");
+				else if (map[i][j] instanceof SpecialWall)
+					System.out.print("S  ");
+				else if (map[i][j] instanceof Pit)
+					System.out.print("P  ");
+				else if (map[i][j] instanceof SpaceShip)
+					System.out.print("SS ");
+				else if (map[i][j] instanceof Door){
+					System.out.print("D ");
+					
+				}
+					
+				else if (map[i][j] instanceof Scale)
+					System.out.print("SC ");				
+			}
+			System.out.println();
+		}
+
+	}
+	public int getZPMcount(){return ZPMcount;}
 }

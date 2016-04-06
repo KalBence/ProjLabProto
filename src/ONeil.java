@@ -72,11 +72,19 @@ public class ONeil {
 	}
 	
 	//Lövés kezelése
-	public void shoot() {
+	public void shoot(char c) {
+		
 		System.out.println("ONeil: shoot metódus hívás");
+		if(c=='b'){
+			System.out.println("Blue bullet");
 		BlueBullet b = new BlueBullet(direction, loc , map);
 		b.move();
-		
+		}
+		else {
+			System.out.println("yellow bullet");
+			YellowBullet y = new YellowBullet(direction, loc , map);
+			y.move();
+		}
 	}
 	
 	//Koordináta visszadása
