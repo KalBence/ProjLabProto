@@ -9,6 +9,8 @@ import java.util.EnumSet;
 
 
 
+
+
 public class Game {
 	public static void main(String[] args)  {
 		String n;	
@@ -36,10 +38,10 @@ public class Game {
 						System.out.println(num);
 						if(!o.direction.equals(direction)){
 							num--;
-						//	if(direction.equals("Up")){o.direction=Directions.Up;	}
-							if(direction.equals("Down")){		}
-							if(direction.equals("Left")){		}
-							if(direction.equals("Right")){	}
+							if(direction.equals("Up")){o.direction=ONeil.Directions.Up;	}
+							if(direction.equals("Down")){	o.direction=ONeil.Directions.Down;	}
+							if(direction.equals("Left")){	o.direction=ONeil.Directions.Left;	}
+							if(direction.equals("Right")){o.direction=ONeil.Directions.Right;	}
 						}
 						System.out.println(o.direction+" "+num);
 						/*for(int i=0;i<num;i++)
