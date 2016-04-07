@@ -1,15 +1,11 @@
-import java.awt.Image;
 
-//import Bullet.Directions;
-
-//Osztály ONeil kezelésére
-public class ONeil extends Caracter{ 
-	 private int weight;
+public class Jaffa extends Caracter {
+	private int weight;
 	 
 	 //Konstruktor
-	public ONeil(Map map,int lives) {
+	public Jaffa(Map map,int lives) {
 		super(map,lives);
-		System.out.println("ONeil: konstruktor metódus hívás");
+		System.out.println("Jaffa: konstruktor metódus hívás");
 		loc = new Coord(8,7); //(oszlop,sor)
 	}
 	
@@ -38,15 +34,15 @@ public class ONeil extends Caracter{
 	public void shoot(char c) {
 		
 		System.out.println("ONeil: shoot metódus hívás");
-		if(c=='b'){
-			System.out.println("Blue bullet");
-		BlueBullet b = new BlueBullet(direction, loc , map);
-		b.move();
+		if(c=='r'){
+			System.out.println("Red bullet");
+		RedBullet r = new RedBullet(direction, loc , map);
+		r.move();
 		}
 		else {
-			System.out.println("yellow bullet");
-			YellowBullet y = new YellowBullet(direction, loc , map);
-			y.move();
+			System.out.println("Green bullet");
+			GreenBullet g = new GreenBullet(direction, loc , map);
+			g.move();
 		}
 	}
 	
@@ -74,6 +70,5 @@ public class ONeil extends Caracter{
 		break;		
 	}
 }
-	
 	
 }
