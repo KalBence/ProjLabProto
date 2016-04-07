@@ -7,6 +7,8 @@ import java.util.EnumSet;
 
 
 
+
+
 public class Game {
 	public static void main(String[] args)  {
 		String n;	
@@ -34,7 +36,7 @@ public class Game {
 						System.out.println(num);
 						if(!o.direction.equals(direction)){
 							num--;
-							if(direction.equals("Up")){	}
+						//	if(direction.equals("Up")){o.direction=Directions.Up;	}
 							if(direction.equals("Down")){		}
 							if(direction.equals("Left")){		}
 							if(direction.equals("Right")){	}
