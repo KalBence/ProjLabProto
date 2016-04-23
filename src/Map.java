@@ -35,7 +35,6 @@ public class Map {
 		    StringBuilder sb = new StringBuilder();
 		    String line = br.readLine();
 		    while (line != null) {
-		    	Y++;
 		    	sizeY = Y +1 ;
 		      String[]c=line.split(";");
 		      sizeX= c.length+1;
@@ -80,11 +79,11 @@ public class Map {
 		    	}
 		     }
 		        line = br.readLine();
-		       
+		        Y++;
 		    }
 		    String everything = sb.toString();
 		} finally {
-			map[5][4]=new Wall(new Coord(4,5)); // 
+			map[4][4]=new Wall(new Coord(4,4)); // 
 		    br.close();
 		}
 		
@@ -94,24 +93,21 @@ public class Map {
 		for (int i=0;i<getSizeY();i++){
 			for (int j=0;j<getSizeX();j++){
 				if (map[i][j] instanceof Ground)
-					System.out.print("G  ");
+					System.out.print("G"+i+j+"  ");
 				else if (map[i][j] instanceof SpecialWall)
-					System.out.print("S  ");
+					System.out.print("S"+i+j+"  ");
 				else if (map[i][j] instanceof Door){
-					System.out.print("D ");}
+					System.out.print("D"+i+j+"  ");}
 				else if (map[i][j] instanceof Wall)
-					System.out.print("W  ");
+					System.out.print("W"+i+j+"  ");
 				
 				else if (map[i][j] instanceof Pit)
-					System.out.print("P  ");
+					System.out.print("P"+i+j+"  ");
 				else if (map[i][j] instanceof SpaceShip)
-					System.out.print("SS ");
+					System.out.print("SS"+i+j+"  ");
 				
-					
-				
-					
 				else if (map[i][j] instanceof Scale)
-					System.out.print("SC ");				
+					System.out.print("SC"+i+j+"  ");				
 			}
 			System.out.println();
 		}
