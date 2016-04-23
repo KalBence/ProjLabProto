@@ -37,11 +37,9 @@ public class Game {
 							if(direction.equals("Left")){	o.direction=ONeil.Directions.Left;	}
 							if(direction.equals("Right")){o.direction=ONeil.Directions.Right;	}
 						}
-<<<<<<< HEAD
+
 						System.out.println(o.direction+" "+num);
-=======
-						//System.out.println(o.direction+" "+num);
->>>>>>> origin/master
+
 						for(int i=0;i<num;i++)
 							o.move();
 						

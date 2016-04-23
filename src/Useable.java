@@ -20,7 +20,6 @@ public abstract class Useable {
 	
 	public abstract  void redeem(); //A használható objektumokkal való interakciót írja le
 	{
-
 	}
 	public int getZPMcount(){
 		return ZPMCount;
