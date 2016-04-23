@@ -34,16 +34,20 @@ public class Jaffa extends Caracter {
 	public void shoot(char c) {
 		
 		System.out.println("ONeil: shoot metódus hívás");
-		if(c=='r'){
+		if(c=='r')
+		{
 			System.out.println("Red bullet");
-		RedBullet r = new RedBullet(direction, loc , map);
-		r.move();
+			RedBullet r = new RedBullet(direction, loc , map);
+			r.move();
 		}
-		else {
+		
+		if(c=='g')
+		{
 			System.out.println("Green bullet");
 			GreenBullet g = new GreenBullet(direction, loc , map);
 			g.move();
 		}
+		
 	}
 	
 

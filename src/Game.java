@@ -3,19 +3,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.EnumSet;
 
-
-
-
-
-
-
-
-
 public class Game {
 	public static void main(String[] args)  {
 		String n;	
 		Map map = new Map();
 		ONeil o = null;
+		Jaffa j=null;
 		
 		System.out.println("Utasítások:");
 		
@@ -26,6 +19,7 @@ public class Game {
 					if(n.equals("LoadMap")){
 					map.initmap();
 					o = new ONeil(map,3);
+					j= new Jaffa(map,3);
 					}
 					// OMove<direction><number>
 					else if(n.startsWith("OMove")){
@@ -54,7 +48,7 @@ public class Game {
 						}
 						else o.pickUp();
 					}
-				// Honnan tudjuk h b/Y
+					
 					else if(n.equals("OShootB")){
 						o.shoot('b');
 					}
@@ -69,10 +63,10 @@ public class Game {
 						
 					}
 					else if(n.equals("JShootG")){
-						
+						j.shoot('g');
 					}
 					else if(n.equals("JShootR")){
-						
+						j.shoot('r');
 					}
 					else if(n.equals("ListMap")){
 						map.getMap();
