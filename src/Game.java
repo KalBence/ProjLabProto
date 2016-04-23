@@ -16,10 +16,11 @@ public class Game {
 			try {
 				while((n=br.readLine())!=null) {
 					
-					if(n.equals("LoadMap")){
-					map.initmap();
+					if(n.equals("LM")){
+					
 					o = new ONeil(map,3);
 					j= new Jaffa(map,3);
+					map.initmap(o,j);
 					}
 					// OMove<direction><number>
 					else if(n.startsWith("OMove")){
@@ -90,7 +91,7 @@ public class Game {
 					else if(n.equals("JShootR")){
 						j.shoot('r');
 					}
-					else if(n.equals("ListMap")){
+					else if(n.equals("L")){
 						map.getMap();
 					}
 					else if(n.equals("RMove")){
@@ -109,7 +110,7 @@ public class Game {
 					
 				
 			} catch (IOException e1) {
-				e1.printStackTrace();
+				System.out.println("Kiestünk a palyaról");
 			}
 		}
 	}

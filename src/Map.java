@@ -24,8 +24,9 @@ public class Map {
 		
 	}
 
-	public void initmap() throws IOException{
+	public void initmap(ONeil o,Jaffa j) throws IOException{
 		int Y=0;
+		oneil=o;
 		String current = new java.io.File( "." ).getCanonicalPath();
        // System.out.println("Current dir:"+current);
 		String currentDir = System.getProperty("user.dir");
@@ -74,7 +75,7 @@ public class Map {
 		    		Dy=Character.getNumericValue(c[i].charAt(3));
 		    		System.out.println(Dx+" : "+Dy);
 		    		
-		    		map[Y][i]=new Scale(new Coord(Dy,Dx),new Coord(i,Y),this);
+		    		map[Y][i]=new Scale(new Coord(i,Y),new Coord(Dy,Dx),this);
 		    		 map[Dx][Dy]=new Door(new Coord(Dy,Dx));  
 		    	}
 		     }
@@ -92,7 +93,9 @@ public class Map {
 		System.out.println();
 		for (int i=0;i<getSizeY();i++){
 			for (int j=0;j<getSizeX();j++){
-				if (map[i][j] instanceof Ground)
+				if (j==oneil.loc.getX()&& i==oneil.loc.getY())
+					System.out.print("O"+i+j+"  ");
+				else if (map[i][j] instanceof Ground)
 					System.out.print("G"+i+j+"  ");
 				else if (map[i][j] instanceof SpecialWall)
 					System.out.print("S"+i+j+"  ");

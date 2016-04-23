@@ -10,7 +10,7 @@ public class ONeil extends Caracter{
 	public ONeil(Map map,int lives) {
 		super(map,lives);
 		System.out.println("ONeil: konstruktor metódus hívás");
-		loc = new Coord(0,0); //(oszlop,sor)
+		loc = new Coord(2,1); //(oszlop,sor)
 	}
 	
 

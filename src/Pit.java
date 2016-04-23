@@ -14,7 +14,7 @@ public class Pit extends Tile {
 	@Override
 	public Coord stepOn(Coord c) {
 		System.out.println("Coord: stepOn metódus hívás");
-		Coord tempcord=new Coord(1,1);
+		Coord tempcord=new Coord(2,1);
 		
 		if(oneil.lives>1){ //Ha van még élete..
 		oneil.lives--;  //..Akkor csökkentjük
