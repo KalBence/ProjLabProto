@@ -21,31 +21,36 @@ public class ONeil extends Caracter{
 		switch (direction) {
 			case Up:   //Fel
 				object = map.map[loc.getY()-1][loc.getX()].getObj(); //Koordináták beállítása
+				System.out.println(loc.getY()-1+" "+loc.getX());
 			break;
 			case Down: //le
 				object = map.map[loc.getY()+1][loc.getX()].getObj(); //Koordináták beállítása
 			break;
 			case Left: //Balra
 				object = map.map[loc.getY()][loc.getX()-1].getObj(); //Koordináták beállítása
+				System.out.println(loc.getY()+" "+(loc.getX()-1));
 			break;
 			case Right: //Jobb
 				object = map.map[loc.getY()][loc.getX()+1].getObj(); //Koordináták beállítása
 			break;		
 		}
+		if(object!=null){
+			System.out.println("yaay");
+		}
 	}
 	
 	//Lövés kezelése
-	public void shoot(char c) {
+	public void shoot(char c,WormHole w) {
 		
 		System.out.println("ONeil: shoot metódus hívás");
 		if(c=='b'){
 			System.out.println("Blue bullet");
-		BlueBullet b = new BlueBullet(direction, loc , map);
+		BlueBullet b = new BlueBullet(direction, loc , map,w);
 		b.move();
 		}
 		else {
 			System.out.println("yellow bullet");
-			YellowBullet y = new YellowBullet(direction, loc , map);
+			YellowBullet y = new YellowBullet(direction, loc , map,w);
 			y.move();
 		}
 	}

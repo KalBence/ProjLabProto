@@ -9,6 +9,7 @@ public Image image;
 		//A ZPM modul beváltása 
 		ZPMCount++;
 		System.out.println("A ZPM modul sikeresen elhelyezõdött");
+		//todo: Random zpm lerakása
 	}
    
 }

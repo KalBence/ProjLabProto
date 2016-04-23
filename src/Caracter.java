@@ -17,7 +17,7 @@ public class Caracter {
 		  Right
 		  
 		}
-	 Directions direction = Directions.Up;
+	 Directions direction = Directions.Right;
 	 public Caracter(Map map,int lives){
 			this.map=map;
 			this.lives=lives;

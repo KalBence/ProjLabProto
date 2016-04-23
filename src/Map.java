@@ -84,7 +84,10 @@ public class Map {
 		    }
 		    String everything = sb.toString();
 		} finally {
-			map[4][4]=new Wall(new Coord(4,4)); // 
+			
+			map[4][4]=new Wall(new Coord(4,4)); //
+			map[1][1].setObj(new ZPM());
+			map[2][2].setObj(new ZPM());
 		    br.close();
 		}
 		
@@ -95,6 +98,8 @@ public class Map {
 			for (int j=0;j<getSizeX();j++){
 				if (j==oneil.loc.getX()&& i==oneil.loc.getY())
 					System.out.print("O"+i+j+"  ");
+				else if (map[i][j] instanceof Portal)
+					System.out.print("P"+i+j+"  ");
 				else if (map[i][j] instanceof Ground)
 					System.out.print("G"+i+j+"  ");
 				else if (map[i][j] instanceof SpecialWall)

@@ -31,20 +31,20 @@ public class Jaffa extends Caracter {
 	}
 	
 	//Lövés kezelése
-	public void shoot(char c) {
+	public void shoot(char c,WormHole w) {
 		
 		System.out.println("ONeil: shoot metódus hívás");
 		if(c=='r')
 		{
 			System.out.println("Red bullet");
-			RedBullet r = new RedBullet(direction, loc , map);
+			RedBullet r = new RedBullet(direction, loc , map,w);
 			r.move();
 		}
 		
 		if(c=='g')
 		{
 			System.out.println("Green bullet");
-			GreenBullet g = new GreenBullet(direction, loc , map);
+			GreenBullet g = new GreenBullet(direction, loc , map,w);
 			g.move();
 		}
 		

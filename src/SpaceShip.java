@@ -42,6 +42,7 @@ public class SpaceShip extends Tile {
 		System.out.println("SpaceShip: setObj metódus hívás");
 		if(object == null){
 		this.object = o;
+		object.redeem();
 		return true;
 		}
 		else return false;

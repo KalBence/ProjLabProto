@@ -50,8 +50,8 @@ public abstract class Bullet {
 				System.out.println("Lövedék balra pew-pew");
 				break;
 			case Right: //ha jobbra megy
-				flying=map.map[loc.getY()][loc.getX()+1].fly(this); //Koordináta beállítása
 				loc.setX(loc.getX()+1);
+				flying=map.map[loc.getY()][loc.getX()].fly(this); //Koordináta beállítása
 				System.out.println("Bullet: Lövedék jobbra pew-pew");
 				break;
 			}

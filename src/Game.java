@@ -9,6 +9,7 @@ public class Game {
 		Map map = new Map();
 		ONeil o = null;
 		Jaffa j=null;
+		WormHole wh=new WormHole();
 		
 		System.out.println("Utasítások:");
 		
@@ -31,7 +32,7 @@ public class Game {
 						num=Character.getNumericValue(snumber.charAt(0))*10;
 						num+=Character.getNumericValue(snumber.charAt(1));
 						System.out.println(num);
-						if(!o.direction.equals(direction)){
+						if(!o.direction.toString().equals(direction)){
 							num--;
 							if(direction.equals("Up")){o.direction=ONeil.Directions.Up;	}
 							if(direction.equals("Down")){	o.direction=ONeil.Directions.Down;	}
@@ -54,10 +55,10 @@ public class Game {
 					}
 					
 					else if(n.equals("OShootB")){
-						o.shoot('b');
+						o.shoot('b',wh);
 					}
 					else if(n.equals("OShootY")){
-						o.shoot('y');
+						o.shoot('y',wh);
 						
 					}
 					else if(n.startsWith("JMove")){
@@ -86,10 +87,10 @@ public class Game {
 						else j.pickUp();
 					}
 					else if(n.equals("JShootG")){
-						j.shoot('g');
+						j.shoot('g',wh);
 					}
 					else if(n.equals("JShootR")){
-						j.shoot('r');
+						j.shoot('r',wh);
 					}
 					else if(n.equals("L")){
 						map.getMap();
@@ -99,8 +100,9 @@ public class Game {
 					}
 					else if(n.equals("MissionDetails")){
 						if(map!=null && o!=null){
-						System.out.println("Collected ZPMs: "+map.getZPMcount());
+						System.out.println("Collected ZPMs: "+new ZPM().getZPMcount());
 						System.out.println("Remaining life: "+o.lives);
+						//System.out.println("blue"+wh.getBlue().getX()+wh.getBlue().getY()+" Yellow "+wh.getYellow().getX()+wh.getYellow().getY());
 						}
 						else System.out.println("Rosszcsont !! ELöbb töltsd be a pályát és kezd játszani.");
 						

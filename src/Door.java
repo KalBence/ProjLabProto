@@ -10,6 +10,7 @@ public class Door extends  Wall {
 	}
 	
 	//Metódus: az ajtó kinyitására illetve becsukására szolgál
+	@Override 
 	public void openDoor() {
 		System.out.println("Door: open metódus hívása");
 		if(isOpen==false) //Ha csukva van..
