@@ -6,7 +6,7 @@ public class Ground extends Tile {
 	//Konstruktor
 	public Ground (Coord c) {
 		super(c);
-		//System.out.println("Ground: konstruktor hívás");
+		System.out.println("Ground: konstruktor hívás");
 	}
 	
 	//Metódus annak az esetnek a kezelésére ha vki groundra lép
