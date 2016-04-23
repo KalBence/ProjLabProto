@@ -39,10 +39,7 @@ public class Game {
 						}
 
 						System.out.println(o.direction+" "+num);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 						for(int i=0;i<num;i++)
 							o.move();
 						
