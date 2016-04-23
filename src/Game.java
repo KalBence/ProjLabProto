@@ -38,8 +38,8 @@ public class Game {
 							if(direction.equals("Right")){o.direction=ONeil.Directions.Right;	}
 						}
 						System.out.println(o.direction+" "+num);
-						/*for(int i=0;i<num;i++)
-							o.move();*/
+						for(int i=0;i<num;i++)
+							o.move();
 						
 					}
 					else if(n.startsWith("OUse")){
@@ -57,10 +57,29 @@ public class Game {
 						
 					}
 					else if(n.startsWith("JMove")){
-						
+						System.out.println(n.substring(6, n.length()-5));
+						String direction=n.substring(6, n.length()-5);
+						String  snumber=(n.substring(n.length()-3, n.length()-1));
+						int num=0;
+						num=Character.getNumericValue(snumber.charAt(0))*10;
+						num+=Character.getNumericValue(snumber.charAt(1));
+						System.out.println(num);
+						if(!j.direction.equals(direction)){
+							num--;
+							if(direction.equals("Up")){j.direction=ONeil.Directions.Up;	}
+							if(direction.equals("Down")){	j.direction=ONeil.Directions.Down;	}
+							if(direction.equals("Left")){	j.direction=ONeil.Directions.Left;	}
+							if(direction.equals("Right")){j.direction=ONeil.Directions.Right;	}
+						}
+						System.out.println(j.direction+" "+num);
+						for(int i=0;i<num;i++)
+							j.move();
 					}
 					else if(n.startsWith("JUse")){
-						
+						if(j.object!=null){
+							j.dropDown();
+						}
+						else j.pickUp();
 					}
 					else if(n.equals("JShootG")){
 						j.shoot('g');
@@ -87,7 +106,6 @@ public class Game {
 					
 				
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
