@@ -100,7 +100,7 @@ public class Game {
 					}
 					else if(n.equals("MissionDetails")){
 						if(map!=null && o!=null){
-						System.out.println("Collected ZPMs: "+new ZPM().getZPMcount());
+						System.out.println("Collected ZPMs: "+new ZPM(map).getZPMcount());
 						System.out.println("Remaining life: "+o.lives);
 						//System.out.println("blue"+wh.getBlue().getX()+wh.getBlue().getY()+" Yellow "+wh.getYellow().getX()+wh.getYellow().getY());
 						}

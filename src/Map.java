@@ -86,8 +86,8 @@ public class Map {
 		} finally {
 			
 			map[4][4]=new Wall(new Coord(4,4)); //
-			map[1][1].setObj(new ZPM());
-			map[2][2].setObj(new ZPM());
+			map[1][1].setObj(new ZPM(this));
+			map[2][0].setObj(new ZPM(this));
 		    br.close();
 		}
 		
