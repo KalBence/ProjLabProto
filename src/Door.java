@@ -18,11 +18,15 @@ public class Door extends  Wall {
 			System.out.println("Ajtó kinyitva");
 			isOpen=true; //..nyissa ki
 		}
-		else   //Ha nyitva van...
+	}
+	
+	public void closeDoor() {
+		System.out.println("Door: open metódus hívása");
+		if(isOpen==true) //Ha csukva van..
 		{
-			System.out.println("Ajtó bezárása");
-			isOpen=false; //..csukja be
-		} 
+			System.out.println("Ajtó kinyitva");
+			isOpen=false; //..nyissa ki
+		}
 	}
 	
 	//Csukott ajtó esetén nem engedi át ONeillt, nyitott ajtó esetén pedig igen
